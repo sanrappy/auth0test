@@ -9,20 +9,21 @@
     <button id="login-button">Log In</button>
 
     <!-- Include the Auth0 client library -->
-    <script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/9.18/auth0.min.js"></script>
 
-    <script>
-      // Initialize the Auth0 client
-      var auth0 = new auth0.WebAuth({
-        domain: 'dev-8i0efww2ejy0bhel.us.auth0.com',
-        clientID: '9xphxX6vS4m7tN7vMFA18o1sBf8TIhB3'
-      });
+    <script type="text/javascript">
+        var webAuth = new auth0.WebAuth({
+          domain:       'YOUR_AUTH0_DOMAIN',
+          clientID:     'YOUR_CLIENT_ID'
+        });
+        
       
       // Handle the login button click
       var loginButton = document.getElementById('login-button');
       loginButton.addEventListener('click', function() {
-        auth0.authorize();
+        webAuth.popup.callback();
       });
+
     </script>
   </body>
 </html>
